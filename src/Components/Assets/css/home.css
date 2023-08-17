@@ -1,0 +1,9 @@
+.container{
+    height: fit-content;
+}
+.homecol2{
+    border: outset; 
+}
+td{
+    text-align: center;
+}
