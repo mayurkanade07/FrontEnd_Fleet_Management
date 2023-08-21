@@ -1,5 +1,7 @@
 .container{
     height: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .homecol2{
     border: outset; 

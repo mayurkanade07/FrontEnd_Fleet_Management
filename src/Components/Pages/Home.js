@@ -50,12 +50,8 @@ function AutoLayoutExample() {
                     <td><input type='text' id='loc'></input></td>
                     <td><button onClick={()=>console.log(5+6)}>Search</button></td>
                 </tr>
-                <tr><td><button>Continue Booking</button></td></tr>
-            </table>
-            
-            
-            
-            
+                <tr ><td colSpan={4}><button style={{marginTop:'10px'}}>Continue Booking</button></td></tr>
+            </table>  
         </form>
         </Col>
         <Col className='homecol2'>2 of 2</Col>   
