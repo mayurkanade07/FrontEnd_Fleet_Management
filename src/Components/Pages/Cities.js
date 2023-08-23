@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 export default function Cities(props) { 
     const {citiesList} = props; 
 
-    console.log(citiesList[0]); 
 
     return (
         <section>

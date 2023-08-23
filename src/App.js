@@ -15,12 +15,12 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />}>Home</Route>
+          <Route path='/' element={<Home />}></Route>
           <Route path='/Home' element={<Home />}/>
           <Route path='/Modify' element={<CancelBooking />}/>
           <Route path='/Addon' element={<Addon />}/>
           <Route path='/LocationSelector' element={<LocationSelector />}/>
-          LocationSelector
+          
         </Routes>
         <Outlet/>
       </BrowserRouter>

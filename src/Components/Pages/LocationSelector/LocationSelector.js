@@ -4,11 +4,12 @@ import { useLocation } from 'react-router-dom';
 
 function LocationSelector() {
   const [locations, setLocations] = useState([]);
-
-  const location = useLocation();
-  const data = location.state.data;
+  
+  // const location = useLocation();
+  // const data = location.state.name;
+  // console.log("Name="+data)
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("http://localhost:8080/api/hubs")
       .then(response => response.json())
       .then(data => setLocations(data))
       .catch(error => console.error('Error fetching data:', error));
@@ -18,23 +19,23 @@ function LocationSelector() {
     <div className="location-selector">
       <h2>Location Selection</h2>
       <p>Select a Pick-up / Return location.</p>
-      <h>{data}</h>
+      {/* <h>{locations}</h> */}
       <form>
         {locations.map(location => (
-          <div key={location.id} className="location-item">
-            <label htmlFor={`location-${location.id}`} className="radio-label">
+          <div key={location.hubId} className="location-item">
+            <label htmlFor={`location-${location.hubId}`} className="radio-label">
               <input
                 type="radio"
                 name="selectedLocation"
-                value={location.id}
-                id={`location-${location.id}`}
+                value={location.hubName}
+                id={`location-${location.hubId}`}
                
               />
               <span className="location-name">
-                {location.name}
+                {location.hubName}
               </span>
             </label>
-            <p className="location-email">{location.email}</p>
+            <p className="location-email">{location.address}</p>
           </div>
         ))}
       </form>

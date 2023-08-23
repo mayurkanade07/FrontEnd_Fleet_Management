@@ -13,12 +13,11 @@ const navigate =useNavigate();
 
     const nextPage=(e)=>{
         e.preventDefault();
-        navigate("/LocationSelector", { state: { data} }); 
+        navigate("/LocationSelector/{2}", { state: { data} }); 
     }
     return (
         <>
-        
-      
+
         <Container className='container'>
             <Row>
                 <Col style={{ minWidth: 'fit-content' }}>
