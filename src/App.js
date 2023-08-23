@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { Routes, Route, BrowserRouter, Outlet } from 'react-router-dom'
 
 import Header from './Components/Layouts/Header/Header';
 import Home from './Components/Pages/Home'
@@ -15,10 +15,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />}>Home</Route>
-          <Route path='/Home' element={<Home />}></Route>
-          <Route path='/Modify' element={<CancelBooking />}>Home</Route>
-          <Route path='/Addon' element={<Addon />}>Home</Route>
+          <Route path='/Home' element={<Home />}/>
+          <Route path='/Modify' element={<CancelBooking />}/>
+          <Route path='/Addon' element={<Addon />}/>
         </Routes>
+        <Outlet/>
       </BrowserRouter>
       
       <Footer/>

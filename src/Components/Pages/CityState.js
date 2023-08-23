@@ -12,6 +12,7 @@ export default function CityState(props) {
                 <td> <States setCitiesList={setCitiesList} citiesList={citiesList} ></States> </td>
                 <td> <Cities citiesList={citiesList} ></Cities> </td>
                 {/* <td><button onClick={() => console.log(5 + 6)}>Search</button></td> */}
+                <td><Popup/></td>
                 <td></td>
                 
         </section>
