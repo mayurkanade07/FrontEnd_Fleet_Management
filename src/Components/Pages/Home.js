@@ -2,11 +2,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CityState from './CityState';
+import Popup from './Popup'
 
 
 export default function Home() {
 
     return (
+        <>
+         <Popup/>
+      
         <Container className='container'>
             <Row>
                 <Col style={{ minWidth: 'fit-content' }}>
@@ -55,6 +59,8 @@ export default function Home() {
                 </Col>
                 <Col className='homecol2'>2 of 2</Col>
             </Row>
+           
         </Container>
+        </>
     );
 }
