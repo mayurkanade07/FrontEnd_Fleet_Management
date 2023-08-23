@@ -103,7 +103,7 @@ export default function App() {
               </p>
             </MDBModalBody>
             <MDBModalFooter>
-              <MDBBtn color='secondary' onClick={() => setScrollableModal(!setScrollableModal)}>
+              <MDBBtn color='primary' onClick={() => setScrollableModal(!setScrollableModal)}>
                 Close
               </MDBBtn>
               <MDBBtn>Save changes</MDBBtn>
