@@ -9,9 +9,6 @@ export default function Vehicle_Selection() {
        <h1>Sub-Columns Table</h1>
        <table>
         <thead>
-
-
-          
            <tr>
              <th>CAR CLASS</th>
              <th>CAR TYPE</th>
