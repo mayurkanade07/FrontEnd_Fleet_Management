@@ -4,13 +4,16 @@ import Col from 'react-bootstrap/Col';
 import CityState from './CityState';
 import Popup from './Popup'
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 
 export default function Home() {
 const navigate =useNavigate();
+    const [data,setData]=useState({name:"Mayur"});
+
     const nextPage=(e)=>{
         e.preventDefault();
-        navigate("/LocationSelector", { state: {  } }); 
+        navigate("/LocationSelector", { state: { data} }); 
     }
     return (
         <>
