@@ -3,10 +3,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CityState from './CityState';
 import Popup from './Popup'
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Home() {
-
+const navigate =useNavigate();
+    const nextPage=(e)=>{
+        e.preventDefault();
+        navigate("/LocationSelector", { state: {  } }); 
+    }
     return (
         <>
         
@@ -53,7 +58,7 @@ export default function Home() {
                             <tr>
                                 <CityState></CityState>
                             </tr>
-                            <tr><td><button>Continue Booking</button></td></tr>
+                            <tr><td><button onClick={nextPage}>Continue Booking</button></td></tr>
                         </table>
                     </form>
                 </Col>
