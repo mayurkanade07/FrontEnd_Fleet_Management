@@ -45,7 +45,7 @@ const RegistrationForm = () => {
     try {
       await schema.validate(formData, { abortEarly: false });
       setErrors({});
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+      const response = await fetch('http://localhost:8080//api/user/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

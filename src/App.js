@@ -6,10 +6,13 @@ import Home from './Components/Pages/Home'
 import CancelBooking from './Components/Pages/Cancel_Booking'
 import Footer from './Components/Layouts/Footer/Footer';
 import Vehicle_Selection from './Components/Pages/Vehicle_Selection';
-import Addon from './Components/Pages/Addon';
+import Addon from './Components/Pages/Addon/Addon';
 import LocationSelector from './Components/Pages/LocationSelector/LocationSelector'
 import Login from './Components/Pages/Login/Login'
 import Registration from './Components/Pages/Register/LoginUser'
+import AboutUs from './Components/Pages/AboutUs/AboutIndiaDrive'
+import CustomerCare from './Components/Pages/CustomerCare/CustomerCare'
+
 
 function App() {
   return (
@@ -25,6 +28,8 @@ function App() {
           <Route path='/LocationSelector/userId' element={<LocationSelector />}/>
           <Route path='/Login' element={<Login />}/>
           <Route path='/Registration' element={<Registration />}/>
+          <Route path='/AboutUs' element={<AboutUs />}/>
+          <Route path='/CustomerCare' element={<CustomerCare />}/>
         </Routes>
         <Outlet/>
       </BrowserRouter>

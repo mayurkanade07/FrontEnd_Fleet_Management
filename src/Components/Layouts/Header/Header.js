@@ -13,8 +13,8 @@ function Header() {
           <Nav className="me-auto">
             <Nav.Link href="Modify">Modify/Cancel Booking</Nav.Link>
             <Nav.Link href="Registration">Membership Registration</Nav.Link>
-            <Nav.Link href="#pricing">About IndiaDrive</Nav.Link>
-            <Nav.Link href="#pricing">Customer Care</Nav.Link>
+            <Nav.Link href="AboutUs">About IndiaDrive</Nav.Link>
+            <Nav.Link href="CustomerCare">Customer Care</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link href="Login"  className='logoname'>Login</Nav.Link>

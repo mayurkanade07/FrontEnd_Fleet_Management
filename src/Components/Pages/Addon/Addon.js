@@ -1,7 +1,17 @@
-import React from 'react';
-import '../Assets/css/addon.css';
+  import React from 'react';
+  import './addon.css';
+  import { useNavigate } from 'react-router-dom';
 
-function Addon() {
+  function Addon() {
+
+    const navigate = useNavigate(); // Instantiate the hook
+
+  // Define a function to redirect to the home page
+  const redirectHome = () => {
+    navigate('/Home'); // This navigates to the root (home) route
+  };
+
+
   return (
     <div className="addon">
       <div className="addon-box">
@@ -36,6 +46,15 @@ function Addon() {
               </td>
               <td></td>
             </tr>
+            <br></br>
+              <tr>
+                  <td>
+                  <button id="continue" style={{ fontSize: '20px' }}>Continue Booking</button>
+                  </td>
+                  <td>
+                  <button type="reset" id="cancel" style={{ fontSize: '20px' }} onClick={redirectHome}>Cancel</button>
+                  </td>
+              </tr>
           </tbody>
         </table>
       </div>
