@@ -8,6 +8,8 @@ import Footer from './Components/Layouts/Footer/Footer';
 import Vehicle_Selection from './Components/Pages/Vehicle_Selection';
 import Addon from './Components/Pages/Addon';
 import LocationSelector from './Components/Pages/LocationSelector/LocationSelector'
+import Login from './Components/Pages/Login/Login'
+import Registration from './Components/Pages/Register/LoginUser'
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
           <Route path='/Modify' element={<CancelBooking />}/>
           <Route path='/Addon' element={<Addon />}/>
           <Route path='/LocationSelector' element={<LocationSelector />}/>
-          
+          <Route path='/LocationSelector/userId' element={<LocationSelector />}/>
+          <Route path='/Login' element={<Login />}/>
+          <Route path='/Registration' element={<Registration />}/>
         </Routes>
         <Outlet/>
       </BrowserRouter>

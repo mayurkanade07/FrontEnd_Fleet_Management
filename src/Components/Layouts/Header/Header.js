@@ -12,12 +12,12 @@ function Header() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="Modify">Modify/Cancel Booking</Nav.Link>
-            <Nav.Link href="Addon">Membership Registration</Nav.Link>
+            <Nav.Link href="Registration">Membership Registration</Nav.Link>
             <Nav.Link href="#pricing">About IndiaDrive</Nav.Link>
             <Nav.Link href="#pricing">Customer Care</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets"  className='logoname'>Login</Nav.Link>
+            <Nav.Link href="Login"  className='logoname'>Login</Nav.Link>
 
           </Nav>
         </Navbar.Collapse>

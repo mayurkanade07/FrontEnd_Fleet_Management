@@ -9,11 +9,19 @@ import { useState } from 'react';
 
 export default function Home() {
 const navigate =useNavigate();
-    const [data,setData]=useState({name:"Mayur"});
+    // const [data,setData]=useState({name:"Mayur"});
+    const [dataFromCityState, setDataFromCityState] = useState();
+    console.log("+++++++++"+dataFromCityState)
+    // const receiveDataFromCityState = (data) => {
+        
+    //     setDataFromCityState(data.cityId);
+    //     console.log(data)
+    //   };
 
+    
     const nextPage=(e)=>{
         e.preventDefault();
-        navigate("/LocationSelector/{2}", { state: { data} }); 
+        navigate(`/LocationSelector/${dataFromCityState}`); 
     }
     return (
         <>
@@ -40,11 +48,8 @@ const navigate =useNavigate();
                             </tr>
                             <h6>OR</h6>
                             <tr>
-                                <CityState></CityState>
+                                <CityState datacityState={dataFromCityState} sendDataToParent={setDataFromCityState}></CityState>
                             </tr>
-
-
-
                             <tr>
                                 <td style={{ textAlign: 'end' }}><input type='checkbox'></input></td>
                                 <td>I may return the car to different location</td>
