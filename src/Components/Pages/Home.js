@@ -44,23 +44,29 @@ export default function Home() {
                                     </tr>
                                     <h6>Pickup Location</h6>
                                     <tr>
+                                        <div>
                                         <td><label for='loc'>Enter Airport Code</label></td>
                                         <td><input type='text' id='loc'></input></td>
                                         <td><a href='#href'>Find Airport</a></td>
+                                        </div>
                                     </tr>
                                     <h6>OR</h6>
                                     <tr>
                                         <CityState datacityState={dataFromCityState} sendDataToParent={setDataFromCityState}></CityState>
                                     </tr>
                                     <tr>
+                                        <div>
                                         <td style={{ textAlign: 'end' }}><input type='checkbox'></input></td>
                                         <td>I may return the car to different location</td>
+                                        </div>
                                     </tr>
                                     <h6>Return Location</h6>
                                     <tr>
+                                        <div>
                                         <td><label for='loc'>Enter Airport Code</label></td>
                                         <td><input type='text' id='loc'></input></td>
                                         <td><a href='#href'>Find Airport</a></td>
+                                        </div>
                                     </tr>
                                     <h6>OR</h6>
 
