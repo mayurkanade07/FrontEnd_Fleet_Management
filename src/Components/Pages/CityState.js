@@ -8,7 +8,7 @@
         const { datacityState,sendDataToParent } = props;
         const sendDataToParentOnClick = () => {
         // Simulate data to send back to the parent component
-        const dataToSend = { cityId: props.citiesList.cityId };
+        const dataToSend = { cityId: citiesList.cityId };
         console.log("Data to send  ="+dataToSend)
         // Call the callback function to send data to the parent component
         sendDataToParent(dataToSend);

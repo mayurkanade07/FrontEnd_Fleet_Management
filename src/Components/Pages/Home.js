@@ -18,10 +18,29 @@ export default function Home() {
     //     console.log(data)
     //   };
 
+    const [formData, setFormData] = useState({
+        first_name: '',
+        last_name: '',
+        email_id: '',
+        mobile_number: '',
+        address: '',
+        driving_license_no: '',
+        passport_no: '',
+        state: '',
+        aadhaar: '', 
+        city: {
+          cityId: ''
+        }, 
+        state: {
+          stateId: ''
+        }
+      });
+
+      
 
     const nextPage = (e) => {
         e.preventDefault();
-        navigate(`/LocationSelector/${dataFromCityState}`);
+        navigate(`/LocationSelector/${dataFromCityState}`,{state:dataFromCityState});
     }
     return (
         <>

@@ -1,15 +1,21 @@
   import React from 'react';
   import './addon.css';
   import { useNavigate } from 'react-router-dom';
+  import { useLocation } from 'react-router-dom';
 
   function Addon() {
 
-    const navigate = useNavigate(); // Instantiate the hook
+    const navigate = useNavigate(); 
 
-  // Define a function to redirect to the home page
+  
   const redirectHome = () => {
-    navigate('/Home'); // This navigates to the root (home) route
+    navigate('/Home'); 
   };
+
+  const location = useLocation();
+  const selectedVehicle = location.state;
+
+  console.log(selectedVehicle);
 
 
   return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import './footer.css';
 import {
   MDBFooter,
   MDBContainer,
@@ -8,7 +9,7 @@ import {
 
 export default function App() {
   return (
-    <MDBFooter className='bg-secondary text-white text-center text-md-start'>
+    <MDBFooter className='custom-footer'>
       <MDBContainer className='p-4'>
         <MDBRow>
           <MDBCol lg="6" md="12" className='mb-4 mb-md-0'>

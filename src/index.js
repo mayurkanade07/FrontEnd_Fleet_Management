@@ -4,8 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./Components/Assets/css/header.css";
-import "./Components/Assets/css/home.css";
+import './Components/Assets/css/header.css'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

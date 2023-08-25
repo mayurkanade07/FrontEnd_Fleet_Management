@@ -1,10 +1,8 @@
 import React from 'react';
 import './CustomerCare.css'; // Don't forget to create this CSS file for styling
 
-function CustomerCare() {
 
-  
-   
+function CustomerCare() {
   return (
     <div className="customer-care-container">
       <h1>Customer Care</h1>
@@ -14,7 +12,7 @@ function CustomerCare() {
         <div className="option">
           <h2>Contact Us</h2>
           <p>If you have questions or need assistance, feel free to contact our customer support team.</p>
-          <button className="btn-contact" onClick={()=>5+5}>Contact Us</button>
+          <button className="btn-contact">Contact Us</button>
         </div>
 
         <div className="option">

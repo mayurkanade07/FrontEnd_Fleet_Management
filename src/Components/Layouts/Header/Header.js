@@ -1,11 +1,12 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import './header.css'
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function Header() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar collapseOnSelect expand="lg" className="custom-navbar">
       <Container>
         <Navbar.Brand href="Home" className='logoname'>INDIA DRIVE </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -17,7 +18,7 @@ function Header() {
             <Nav.Link href="CustomerCare">Customer Care</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="Login"  className='logoname'>Login</Nav.Link>
+            <Nav.Link href="Login"  className='login-button'>Login</Nav.Link>
 
           </Nav>
         </Navbar.Collapse>

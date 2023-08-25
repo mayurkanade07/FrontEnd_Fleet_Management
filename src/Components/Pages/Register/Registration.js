@@ -3,19 +3,19 @@ import './RegistrationForm.css';
 import * as yup from 'yup';
 import { Container } from 'react-bootstrap';
 
-const schema = yup.object().shape({
-  first_name: yup.string().required('First name is required'),
-  last_name: yup.string().required('Last name is required'),
-  email_id: yup.string().email('Invalid email format').required('Email is required'),
-  mobile_number: yup.string().required('Mobile number is required'),
-  address: yup.string().required('Address is required'),
-  driving_license_no: yup.string().required('Driving License No. is required'),
-  passport_no: yup.string().required('Passport No. is required'),
-  state: yup.string().required('State is required'),
-  city: yup.string().required('City is required'),
-});
+// const schema = yup.object().shape({
+//   first_name: yup.string().required('First name is required'),
+//   last_name: yup.string().required('Last name is required'),
+//   email_id: yup.string().email('Invalid email format').required('Email is required'),
+//   mobile_number: yup.string().required('Mobile number is required'),
+//   address: yup.string().required('Address is required'),
+//   driving_license_no: yup.string().required('Driving License No. is required'),
+//   passport_no: yup.string().required('Passport No. is required'),
+//   state: yup.string().required('State is required'),
+//   city: yup.string().required('City is required'),
+// });
 
-const RegistrationForm = () => {
+function Registration  ()  {
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -25,49 +25,69 @@ const RegistrationForm = () => {
     driving_license_no: '',
     passport_no: '',
     state: '',
-    city: '',
+    aadhaar: '', 
+    city: {
+      cityId: ''
+    }, 
+    state: {
+      stateId: ''
+    }
   });
 
   const [errors, setErrors] = useState({});
 
-  const handleChange = event => {
+  function handleChange (event) {
     const { name, value } = event.target;
-    setFormData(prevData => ({
-      ...prevData,
+    setFormData({
+      ...formData,
       [name]: value,
-    }));
+    });
   };
 
-  const handleSubmit = async event => {
+  function handleSubmit (event) {
     event.preventDefault();
     console.log('Form submitted:', formData);
 
-    try {
-      await schema.validate(formData, { abortEarly: false });
-      setErrors({});
-      const response = await fetch('http://localhost:8080//api/user/add', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        console.log('Form data sent successfully');
-        // Handle success scenario here
-      } else {
-        console.error('Failed to send form data');
-        // Handle error scenario here
+    const data = {
+      firstName: formData.first_name,
+      lastName: formData.last_name,
+      mobileNumber: formData.mobile_number,
+      address: formData.address,
+      emailId: formData.email_id,
+      dlNo: formData.driving_license_no,
+      aadharNo: formData.aadhaar,
+      passportNo: formData.passport_no, 
+      city: {
+        cityId: 2110
+      }, 
+      state: {
+        stateId: 21 
       }
-    } catch (validationErrors) {
-      const newErrors = {};
-      validationErrors.inner.forEach(error => {
-        newErrors[error.path] = error.message;
-      });
-      setErrors(newErrors);
-    }
-  };
+    };
+
+    fetch("http://localhost:8080/api/user/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const contentType = res.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          return res.json();
+        } else {
+          return {};
+        }
+      })
+      .catch((error) => {
+        console.error("Registration error:", error);
+        // Handle registration errors here, e.g., display error messages to the user
+      }); 
+  }
 
   return (
     <Container fluid className="registration-bg-container">
@@ -181,4 +201,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
+export default Registration;
